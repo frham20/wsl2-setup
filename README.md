@@ -116,7 +116,7 @@ Requires at a minimum Windows 10 1903 18362.1049
       "colorScheme": "Firewatch",
       "fontFace": "Noto Mono for Powerline",
       "fontSize": 10,
-      "startingDirectory": "\\\\wsl$\\Ubuntu-20.04\\home\\fhamel"
+      "startingDirectory": "\\\\wsl$\\Ubuntu-20.04\\home\\<USERNAME>"
    }
    ```
 
