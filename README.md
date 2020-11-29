@@ -101,12 +101,11 @@ Requires at a minimum Windows 10 1903 18362.1049
    "defaultProfile": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
    ```
 1. Install the Powerline fonts on Windows
-   1. Clone the powerline fonts repository from github
+   - Open a Powershell terminal
+   - Clone the powerline fonts repository from github and install the fonts
       ```
       git clone https://github.com/powerline/fonts
-      ```
-   1. Open Powershell and run *install.ps1*
-      ```
+      cd fonts
       ./install.ps1
       ```
 1. Setup Ubuntu terminal to use the proper color scheme and font
