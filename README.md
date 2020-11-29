@@ -7,21 +7,21 @@ My custom setup step by step instructions
 Requires at a minimum Windows 10 1903 18362.1049
 
 1. Make sure the Windows 10 build revision is **greater than 1049**, in case it isn't
-   - Run *Windows Update* or
+   - Run `Windows Update` or
    - Download and run the [update](https://www.catalog.update.microsoft.com/Search.aspx?q=KB4566116) manually
-1. Enable the WSL
+1. Enable the `Windows Subsystem for Linux`
    - Using Powershell as Admin
       ```
       dism /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
       ```
-1. Enable the Virtual Machine Platform
+1. Enable the `Virtual Machine Platform`
    - Using Powershell as Admin
       ```
       dism /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
       ```
 1. Reboot
 1. Download and run the [Linux Kernel Update](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi)
-1. Set default WSL version to 2
+1. Set default WSL version to `2`
    - Using Powershell
       ```
       wsl --set-default-version 2
@@ -57,7 +57,7 @@ Requires at a minimum Windows 10 1903 18362.1049
     "largePasteWarning": true,
     "multiLinePasteWarning": false,
    ```
-1. Add the Firewatch scheme to the color schemes ( taken from [here](https://windowsterminalthemes.dev/) )
+1. Add the `Firewatch` scheme to the color schemes ( taken from [here](https://windowsterminalthemes.dev/) )
    ```json
     "schemes": [
         {
@@ -94,11 +94,11 @@ Requires at a minimum Windows 10 1903 18362.1049
       "source": "Windows.Terminal.Wsl"
    }
    ```
-   - Copy the guid field into the global *defaultProfile* setting
+   - Copy the guid field into the global `defaultProfile` setting
    ```json
    "defaultProfile": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
    ```
-1. Install the Powerline fonts on Windows
+1. Install the [Powerline Fonts](https://github.com/powerline/fonts) on Windows
    - Open a Powershell terminal
    - Clone the powerline fonts repository from github and install the fonts
       ```
@@ -142,16 +142,16 @@ Requires at a minimum Windows 10 1903 18362.1049
    ```
 1. Close and reopen the terminal
 1. Install [powerline-go](https://github.com/justjanne/powerline-go)
-   1. Install the GO language package
+   1. Install the `golang-go` package
       ```bash
       sudo apt install golang-go
       ```
-   1. Download the GO based powerline-go package
+   1. Download the go based `powerline-go` package
       ```bash
       go get -u github.com/justjanne/powerline-go
       ```
-1. Edit .bashrc file in the user root directory
-   1. Comment everything related to setting the PS1 var
+1. Edit `.bashrc` file in the user root directory
+   1. Comment everything related to setting the `PS1` var
    1. Add this to the end
       ```bash
       # Support for powerline-go
