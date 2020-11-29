@@ -1,6 +1,7 @@
-# wsl2-setup
+# Windows Subsystem for Linux
+My custom setup step by step instructions
 
-## WSL Setup on Windows 10 1903 
+## Base WSL2 Setup
 
 [Reference](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
 
