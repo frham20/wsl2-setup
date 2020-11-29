@@ -1,8 +1,7 @@
 # Windows Subsystem for Linux
 My custom setup step by step instructions
 
-## Base WSL2 Setup
-
+## Base WSL2 Setup 
 [Reference](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
 
 Requires at a minimum Windows 10 1903 18362.1049
@@ -50,7 +49,6 @@ Requires at a minimum Windows 10 1903 18362.1049
    ```
 
 ## Windows Terminal Setup
-
 1. Install the [Windows Terminal](https://aka.ms/terminal) from the Microsoft Store
 1. Open the Terminal Settings and add those to the global properties
    ```json
@@ -123,19 +121,50 @@ Requires at a minimum Windows 10 1903 18362.1049
    ```
 
 ## Ubuntu Setup
-
-...
-- default user
-- disable root access
-- apt upgrade
-- git hack for speed on NTFS mounted volumes
+1. Open a terminal to Ubuntu
+1. Disable Root Access
+   ```
+   sudo passwd -l root
+   ```
+1. Update & Upgrade the packages
+   ```
+   sudo apt update
+   sudo apt upgrade
+   ```
+1. git hack for speed on NTFS mounted volumes
 
 
 ## Bash Setup
+1. Open a terminal to Ubuntu
+1. Set Bash as the default shell
+   ```
+   chsh -s /bin/bash
+   ```
+1. Close and reopen the terminal
+1. Install [powerline-go](https://github.com/justjanne/powerline-go)
+   1. Install the GO language package
+      ```
+      sudo apt install golang-go
+      ```
+   1. Download the GO based powerline-go package
+      ```
+      go get -u github.com/justjanne/powerline-go
+      ```
+1. Edit .bashrc file in the user root directory
+   1. Comment everything related to setting the PS1 var
+   1. Add this to the end
+      ```
+      # Support for powerline-go
+      function _update_ps1() {
+          PS1="$($HOME/go/bin/powerline-go -hostname-only-if-ssh -colorize-hostname -error $?)"
+      }
 
-- go compiler
-- powerline-go
-- .bashrc
+      if [ "$TERM" != "linux" ] && [ -f "$HOME/go/bin/powerline-go" ]; then
+         PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+      fi
+      ```
+   1. Save and close
+
 
 ## Visual Studio Code Setup
 
