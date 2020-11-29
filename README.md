@@ -123,11 +123,11 @@ Requires at a minimum Windows 10 1903 18362.1049
 ## Ubuntu Setup
 1. Open a terminal to Ubuntu
 1. Disable Root Access
-   ```
+   ```bash
    sudo passwd -l root
    ```
 1. Update & Upgrade the packages
-   ```
+   ```bash
    sudo apt update
    sudo apt upgrade
    ```
@@ -137,23 +137,23 @@ Requires at a minimum Windows 10 1903 18362.1049
 ## Bash Setup
 1. Open a terminal to Ubuntu
 1. Set Bash as the default shell
-   ```
+   ```bash
    chsh -s /bin/bash
    ```
 1. Close and reopen the terminal
 1. Install [powerline-go](https://github.com/justjanne/powerline-go)
    1. Install the GO language package
-      ```
+      ```bash
       sudo apt install golang-go
       ```
    1. Download the GO based powerline-go package
-      ```
+      ```bash
       go get -u github.com/justjanne/powerline-go
       ```
 1. Edit .bashrc file in the user root directory
    1. Comment everything related to setting the PS1 var
    1. Add this to the end
-      ```
+      ```bash
       # Support for powerline-go
       function _update_ps1() {
           PS1="$($HOME/go/bin/powerline-go -hostname-only-if-ssh -colorize-hostname -error $?)"
