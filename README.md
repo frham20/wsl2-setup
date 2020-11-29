@@ -26,6 +26,10 @@ Requires at a minimum Windows 10 1903 18362.1049
       wsl --set-default-version 2
       ```
 1. Install [Ubuntu 20.04](https://www.microsoft.com/store/apps/9n6svws3rx71) from the Microsoft Store
+1. Move Ubuntu to whichever drive you want
+   1. Export the distro to tar file
+   1. Stop / Unregister previous distro
+   1. Import tar file distro specifying installation directory
 
 ## Windows Terminal Setup
 
