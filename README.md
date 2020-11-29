@@ -20,6 +20,7 @@ Requires at a minimum Windows 10 1903 18362.1049
       ```
       dism /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
       ```
+1. Reboot
 1. Download and run the [Linux Kernel Update](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi)
 1. Set default WSL version to 2
    - Using Powershell
@@ -27,10 +28,26 @@ Requires at a minimum Windows 10 1903 18362.1049
       wsl --set-default-version 2
       ```
 1. Install [Ubuntu 20.04](https://www.microsoft.com/store/apps/9n6svws3rx71) from the Microsoft Store
-1. Move Ubuntu to whichever drive you want
+   1. Launch it
+   1. Create user account and set password
+   1. Close the ubuntu terminal
+1. *(optional)* Move Ubuntu to whichever drive you want
    1. Export the distro to tar file
+      ```
+       ...
+      ```
    1. Stop / Unregister previous distro
+      ```
+       ...
+      ```
    1. Import tar file distro specifying installation directory
+      ```
+       ...
+      ```
+1. Set the default distro in WSL
+   ```
+   wsl --set-default Ubuntu-20.04
+   ```
 
 ## Windows Terminal Setup
 
@@ -70,8 +87,41 @@ Requires at a minimum Windows 10 1903 18362.1049
     ],
    ```
 1. Set default terminal to Ubuntu
-1. Powerline fonts installation on Windows
-1. Setup Ubuntu terminal
+   - Find the profile entry for Ubuntu-20.04
+   ```json
+   {
+      "guid": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
+      "hidden": false,
+      "name": "Ubuntu-20.04",
+      "source": "Windows.Terminal.Wsl"
+   }
+   ```
+   - Copy the guid field into the global *defaultProfile* setting
+   ```json
+   "defaultProfile": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
+   ```
+1. Install the Powerline fonts on Windows
+   1. Clone the powerline fonts repository from github
+      ```
+      git clone https://github.com/powerline/fonts
+      ```
+   1. Open Powershell and run *install.ps1*
+      ```
+      ./install.ps1
+      ```
+1. Setup Ubuntu terminal to use the proper color scheme and font
+   ```json
+   {
+      "guid": "{07b52e3e-de2c-5db4-bd2d-ba144ed6c273}",
+      "hidden": false,
+      "name": "Ubuntu-20.04",
+      "source": "Windows.Terminal.Wsl",
+      "colorScheme": "Firewatch",
+      "fontFace": "Noto Mono for Powerline",
+      "fontSize": 10,
+      "startingDirectory": "\\\\wsl$\\Ubuntu-20.04\\home\\fhamel"
+   }
+   ```
 
 ## Ubuntu Setup
 
